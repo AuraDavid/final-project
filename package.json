@@ -9,7 +9,7 @@
     "preview": "vite preview",
     "lint": "eslint src/**/*.jsx",
     "lint:fix": "eslint src/**/*.jsx --fix",
-    "format": "prettier --write './src/**/*.{js,jsx,css,json}' --config ./.prettierrc"
+    "format": "prettier --write ."
   },
   "dependencies": {
     "react": "^18.2.0",
