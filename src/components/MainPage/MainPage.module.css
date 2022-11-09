@@ -1,0 +1,29 @@
+.container {
+    display: grid;
+    grid-template-rows: 100px 100px;
+    border: 1px solid red;
+    color: #14285F;
+    font-size: 15px;
+}
+
+.section {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.sectionTitle {
+    border: 1px solid red;
+}
+
+.firstArticle {
+    border: 1px solid red;
+}
+
+.secondArticle {
+    border: 1px solid red;
+}
+
+.thirdArticle {
+    border: 1px solid red;
+}
