@@ -17,19 +17,19 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/books",
-        element: <Section sectionType={"books"} />,
+        element: <Section sectionType={"books"} key={1} />,
       },
       {
         path: "/sports",
-        element: <Section sectionType={"sports"} />,
+        element: <Section sectionType={"sport"} key={2} />,
       },
       {
         path: "/culture",
-        element: <Section sectionType={"culture"} />,
+        element: <Section sectionType={"culture"} key={3} />,
       },
       {
         path: "/business",
-        element: <Section sectionType={"business"} />,
+        element: <Section sectionType={"business"} key={4} />,
       },
     ],
   },

@@ -13,10 +13,10 @@ const Header = () => {
                 </div>
                 <div className={styles.navBar}>
                     <ul className={styles.navList}>
-                        <li><Link to={`books`}>Books</Link></li>
-                        <li><Link to={`sports`}>Sports</Link></li>
-                        <li><Link to={`culture`}>Culture</Link></li>
-                        <li><Link to={`business`}>Business</Link></li>
+                        <li><Link to={"books"}>Books</Link></li>
+                        <li><Link to={"sports"}>Sports</Link></li>
+                        <li><Link to={"culture"}>Culture</Link></li>
+                        <li><Link to={"business"}>Business</Link></li>
                     </ul>
                 </div>
             </nav>
