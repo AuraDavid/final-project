@@ -9,15 +9,14 @@ const Section = (props) => {
 
     useEffect(() => {
         fetch(`https://content.guardianapis.com/${props.sectionType}?api-key=${API_KEY}&show-fields=thumbnail`)
-           .then((response) => response.json())
-           .then((data) => {
-              console.log(data);
-              setPosts(data.response.results);
-           })
-           .catch((err) => {
-              console.log(err.message);
-           });
-     }, []);
+            .then((response) => response.json())
+            .then((data) => {
+                setPosts(data.response.results);
+            })
+            .catch((err) => {
+                console.log(err.message);
+            });
+    }, []);
 
     return (
         <div className={styles.news}>

@@ -1,9 +1,11 @@
 .container {
     display: grid;
-    grid-template-rows: 100px 100px;
-    border: 1px solid red;
+    grid-template-rows: auto auto;
     color: #14285F;
     font-size: 15px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    border-radius: 40px;
+    margin-bottom: 40px;
 }
 
 .section {
@@ -13,17 +15,20 @@
 }
 
 .sectionTitle {
-    border: 1px solid red;
+    text-align: center;
+}
+
+.sectionContainer {
+    display: grid;
+    grid-template-columns: 300px 300px 300px;
+    grid-gap: 25px;
+    margin: 0px 25px 25px 25px;
 }
 
 .firstArticle {
-    border: 1px solid red;
 }
 
-.secondArticle {
-    border: 1px solid red;
-}
-
-.thirdArticle {
-    border: 1px solid red;
+.articleImg {
+    width: 300px;
+    border-radius: 40px;
 }
