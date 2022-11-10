@@ -5,9 +5,10 @@ import styles from "./Section.module.css";
 
 const Section = (props) => {
     const [posts, setPosts] = useState([]);
+    const API_KEY = import.meta.env.VITE_NEWS_API_KEY;
 
     useEffect(() => {
-        fetch(`https://content.guardianapis.com/${props.sectionType}?api-key=df4b1ba2-2297-4a6f-a313-1c9b5c8190f6&show-fields=thumbnail`)
+        fetch(`https://content.guardianapis.com/${props.sectionType}?api-key=${API_KEY}&show-fields=thumbnail`)
            .then((response) => response.json())
            .then((data) => {
               console.log(data);
