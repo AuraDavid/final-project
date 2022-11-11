@@ -1,0 +1,11 @@
+.articleContainer {
+    color: #14285f;
+    display: grid;
+    grid-template-rows: 2fr 1fr auto;
+    justify-content: center;
+    border: 1px solid red;
+}
+.articleTime {
+    display: flex;
+    justify-content: end;
+}    

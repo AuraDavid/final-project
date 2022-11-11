@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
-import styles from "./MainPage.module.css"
+import { Link } from "react-router-dom";
+import styles from "./MainPage.module.css";
 
 const MainPage = () => {
     const API_KEY = import.meta.env.VITE_NEWS_API_KEY;
@@ -39,8 +40,9 @@ const MainPage = () => {
                         return (
                             <section className={styles.section} key={book.id}>
                                 <article className={styles.firstArticle}>
-                                    <h3>{book.webTitle}</h3>
+                                    <h3><Link to={"./Article"} state={{ apiUrl: book.apiUrl }} className={styles.articleTitle}>{book.webTitle}</Link></h3>
                                     <img src={book.fields.thumbnail} alt={book.webTitle} className={styles.articleImg} />
+                                    <p className={styles.articleTime}>{book.webPublicationDate}</p>
                                 </article>
                             </section>
                         );
@@ -54,7 +56,7 @@ const MainPage = () => {
                         return (
                             <section className={styles.section} key={sport.id}>
                                 <article className={styles.firstArticle}>
-                                    <h3 >{sport.webTitle}</h3>
+                                    <h3><Link to={"./Article"} className={styles.articleTitle}>{sport.webTitle}</Link></h3>
                                     <img src={sport.fields.thumbnail} alt={sport.webTitle} className={styles.articleImg} />
                                 </article>
                             </section>
@@ -69,7 +71,7 @@ const MainPage = () => {
                         return (
                             <section className={styles.section} key={cult.id}>
                                 <article className={styles.firstArticle}>
-                                    <h3>{cult.webTitle}</h3>
+                                    <h3><Link to={"./Article"} className={styles.articleTitle}>{cult.webTitle}</Link></h3>
                                     <img src={cult.fields.thumbnail} alt={cult.webTitle} className={styles.articleImg} />
                                 </article>
                             </section>
@@ -84,7 +86,7 @@ const MainPage = () => {
                         return (
                             <section className={styles.section} key={bus.id}>
                                 <article className={styles.firstArticle}>
-                                    <h3>{bus.webTitle}</h3>
+                                    <h3><Link to={"./Article"} className={styles.articleTitle}>{bus.webTitle}</Link></h3>
                                     <img src={bus.fields.thumbnail} alt={bus.webTitle} className={styles.articleImg} />
                                 </article>
                             </section>

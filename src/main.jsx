@@ -8,6 +8,7 @@ import ErrorPage from "./error-page";
 import App from './App';
 import Section from './components/Section/Section';
 import './index.css';
+import Article from './components/Article/Article';
 
 const router = createBrowserRouter([
   {
@@ -30,6 +31,10 @@ const router = createBrowserRouter([
       {
         path: "/business",
         element: <Section sectionType={"business"} key={4} />,
+      },
+      {
+        path: "/article",
+        element: <Article sectionType={"article"} key={5} />,
       },
     ],
   },

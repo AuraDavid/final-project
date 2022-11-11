@@ -1,0 +1,27 @@
+footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 20px;  
+}
+
+.footerLi {
+    list-style-type: none;
+}
+
+.footerList > li > a {
+    text-decoration: none;
+    
+}
+
+.footerList > li {
+    list-style-type: none; 
+}
+
+.section {
+    text-decoration: none;
+}
+
+.sec-2 {
+    color: grey;
+}
