@@ -9,10 +9,10 @@ const Article = (props) => {
     const [article, setArticle] = useState([]);
 
     useEffect(() => {
-        fetch(`${location.state.apiUrl}?api-key=${API_KEY}&show-fields=thumbnail`)
+        fetch(`${location.state.apiUrl}?api-key=${API_KEY}&show-fields=headline,body`)
             .then((response) => response.json())
             .then((data) => {
-                setArticle(data.response.results);
+                setArticle(data.response.content.fields);
             })
             .catch((err) => {
                 console.log(err.message);
@@ -21,16 +21,10 @@ const Article = (props) => {
 
     return (
         <div className={styles.articleContainer}>
-            {article.map((art) => {
-                return (
-                    <div key={art.id}>
-                        <h1 className={styles.articleTitle}>{art.webTitle}</h1>
-                        <img src={art.fields.thumbnail} alt={post.webTitle} />
-                        <p className={styles.articleTime}>{art.webPublicationDate}</p>
-                        <div className={styles.mainArticle}>{art.webUrl}</div>
-                    </div>
-                );
-            })}
+            <div key={article.id}>
+                <h1 className={styles.articleTitle}>{article.headline}</h1>
+                <div className={styles.articleBody} dangerouslySetInnerHTML={{__html: article.body}}></div>
+            </div>
         </div>
     );
 };

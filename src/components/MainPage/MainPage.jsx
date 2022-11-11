@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import styles from "./MainPage.module.css";
+import useFetchSectionData from "../../services/NewsService";
 
 const MainPage = () => {
     const API_KEY = import.meta.env.VITE_NEWS_API_KEY;
@@ -34,7 +35,7 @@ const MainPage = () => {
     return (
         <div>
             <div className={styles.container}>
-                <h2 className={styles.sectionTitle}>Books</h2>
+                <h2 className={styles.sectionTitle}><Link to={"books"}>Books</Link></h2>
                 <div className={styles.sectionContainer}>
                     {books.map((book) => {
                         return (
@@ -50,13 +51,13 @@ const MainPage = () => {
                 </div>
             </div>
             <div className={styles.container}>
-                <h2 className={styles.sectionTitle}>Sports</h2>
+                <h2 className={styles.sectionTitle}><Link to={"sports"}>Sports</Link></h2>
                 <div className={styles.sectionContainer}>
                     {sports.map((sport) => {
                         return (
                             <section className={styles.section} key={sport.id}>
                                 <article className={styles.firstArticle}>
-                                    <h3><Link to={"./Article"} className={styles.articleTitle}>{sport.webTitle}</Link></h3>
+                                    <h3><Link to={"./Article"} state={{ apiUrl: sport.apiUrl }} className={styles.articleTitle}>{sport.webTitle}</Link></h3>
                                     <img src={sport.fields.thumbnail} alt={sport.webTitle} className={styles.articleImg} />
                                 </article>
                             </section>
@@ -65,13 +66,13 @@ const MainPage = () => {
                 </div>
             </div>
             <div className={styles.container}>
-                <h2 className={styles.sectionTitle}>Culture</h2>
+                <h2 className={styles.sectionTitle}><Link to={"culture"}>Culture</Link></h2>
                 <div className={styles.sectionContainer}>
                     {culture.map((cult) => {
                         return (
                             <section className={styles.section} key={cult.id}>
                                 <article className={styles.firstArticle}>
-                                    <h3><Link to={"./Article"} className={styles.articleTitle}>{cult.webTitle}</Link></h3>
+                                    <h3><Link to={"./Article"} state={{ apiUrl: cult.apiUrl }} className={styles.articleTitle}>{cult.webTitle}</Link></h3>
                                     <img src={cult.fields.thumbnail} alt={cult.webTitle} className={styles.articleImg} />
                                 </article>
                             </section>
@@ -80,13 +81,13 @@ const MainPage = () => {
                 </div>
             </div>
             <div className={styles.container}>
-                <h2 className={styles.sectionTitle}>Business</h2>
+                <h2 className={styles.sectionTitle}><Link to={"business"}>Business</Link></h2>
                 <div className={styles.sectionContainer}>
                     {business.map((bus) => {
                         return (
                             <section className={styles.section} key={bus.id}>
                                 <article className={styles.firstArticle}>
-                                    <h3><Link to={"./Article"} className={styles.articleTitle}>{bus.webTitle}</Link></h3>
+                                    <h3><Link to={"./Article"} state={{ apiUrl: bus.apiUrl }} className={styles.articleTitle}>{bus.webTitle}</Link></h3>
                                     <img src={bus.fields.thumbnail} alt={bus.webTitle} className={styles.articleImg} />
                                 </article>
                             </section>

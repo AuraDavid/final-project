@@ -1,11 +1,17 @@
 .articleContainer {
     color: #14285f;
-    display: grid;
-    grid-template-rows: 2fr 1fr auto;
-    justify-content: center;
-    border: 1px solid red;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    border-radius: 40px;
 }
-.articleTime {
+
+.articleTitle {
+    text-align: center;
+    padding: 40px 40px 0px 40px;
+}
+
+.articleBody {
     display: flex;
-    justify-content: end;
-}    
+    flex-direction: column;
+    align-items: center;
+    padding: 0px 40px;
+}

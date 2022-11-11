@@ -18,6 +18,11 @@
     text-align: center;
 }
 
+.sectionTitle > a {
+    color: #14285f;
+    text-decoration: none;
+}
+
 .sectionContainer {
     display: grid;
     grid-template-columns: 300px 300px 300px;
@@ -26,6 +31,7 @@
 }
 
 .articleTitle {
+    color: #14285f;
     text-decoration: none;
 }
 
