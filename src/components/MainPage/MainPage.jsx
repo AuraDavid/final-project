@@ -41,7 +41,7 @@ const MainPage = () => {
                         return (
                             <section className={styles.section} key={book.id}>
                                 <article className={styles.firstArticle}>
-                                    <h3><Link to={"./Article"} state={{ apiUrl: book.apiUrl }} className={styles.articleTitle}>{book.webTitle}</Link></h3>
+                                    <h3><Link to={`./Article/${book.webTitle}`} state={{ apiUrl: book.apiUrl }} className={styles.articleTitle}>{book.webTitle}</Link></h3>
                                     <img src={book.fields.thumbnail} alt={book.webTitle} className={styles.articleImg} />
                                     <p className={styles.articleTime}>{formatArticleDate(book.webPublicationDate)}</p>
                                 </article>
@@ -57,7 +57,7 @@ const MainPage = () => {
                         return (
                             <section className={styles.section} key={sport.id}>
                                 <article className={styles.firstArticle}>
-                                    <h3><Link to={"./Article"} state={{ apiUrl: sport.apiUrl }} className={styles.articleTitle}>{sport.webTitle}</Link></h3>
+                                    <h3><Link to={`./Article/${sport.webTitle}`} state={{ apiUrl: sport.apiUrl }} className={styles.articleTitle}>{sport.webTitle}</Link></h3>
                                     <img src={sport.fields.thumbnail} alt={sport.webTitle} className={styles.articleImg} />
                                     <p className={styles.articleTime}>{formatArticleDate(sport.webPublicationDate)}</p>
                                 </article>
@@ -73,7 +73,7 @@ const MainPage = () => {
                         return (
                             <section className={styles.section} key={cult.id}>
                                 <article className={styles.firstArticle}>
-                                    <h3><Link to={"./Article"} state={{ apiUrl: cult.apiUrl }} className={styles.articleTitle}>{cult.webTitle}</Link></h3>
+                                    <h3><Link to={`./Article/${cult.webTitle}`} state={{ apiUrl: cult.apiUrl }} className={styles.articleTitle}>{cult.webTitle}</Link></h3>
                                     <img src={cult.fields.thumbnail} alt={cult.webTitle} className={styles.articleImg} />
                                     <p className={styles.articleTime}>{formatArticleDate(cult.webPublicationDate)}</p>
                                 </article>
@@ -89,7 +89,7 @@ const MainPage = () => {
                         return (
                             <section className={styles.section} key={bus.id}>
                                 <article className={styles.firstArticle}>
-                                    <h3><Link to={"./Article"} state={{ apiUrl: bus.apiUrl }} className={styles.articleTitle}>{bus.webTitle}</Link></h3>
+                                    <h3><Link to={`./Article/${bus.webTitle}`} state={{ apiUrl: bus.apiUrl }} className={styles.articleTitle}>{bus.webTitle}</Link></h3>
                                     <img src={bus.fields.thumbnail} alt={bus.webTitle} className={styles.articleImg} />
                                     <p className={styles.articleTime}>{formatArticleDate(bus.webPublicationDate)}</p>
                                 </article>

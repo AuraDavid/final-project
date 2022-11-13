@@ -33,7 +33,7 @@ const router = createBrowserRouter([
         element: <Section sectionType={"business"} key={4} />,
       },
       {
-        path: "/article",
+        path: "/article/:title",
         element: <Article sectionType={"article"} key={5} />,
       },
     ],

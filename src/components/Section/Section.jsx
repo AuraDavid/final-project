@@ -15,7 +15,7 @@ const Section = (props) => {
                     <article className={styles.newsArticle} key={post.id}>
                         <div className={styles.newsContainer}>
                             <h2>
-                                <Link to={"/Article"} state={{ apiUrl: post.apiUrl }} className={styles.newsTitle}>{post.webTitle}</Link>
+                                <Link to={`./Article/${post.webTitle}`} state={{ apiUrl: post.apiUrl }} className={styles.newsTitle}>{post.webTitle}</Link>
                             </h2>
                             <p className={styles.newsTime}>{formatArticleDate(post.webPublicationDate)}</p>
                         </div>
