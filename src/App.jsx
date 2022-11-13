@@ -4,6 +4,7 @@ import { Outlet } from "react-router-dom";
 import MainPage from './components/MainPage/MainPage';
 import { useLocation } from 'react-router-dom';
 import Footer from './components/Footer/Footer';
+import './index.css'
 
 function App() {
   const location = useLocation();
