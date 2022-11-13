@@ -27,6 +27,17 @@
   color: #14285f;
 }
 
+.newsContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.newsContainer>.newsTime {
+  color: #14285f;
+  text-align: end;
+  padding: 20px;
+}
+
 .news>.newsArticle>.newsAuthor {
   text-align: right;
   padding: 20px 0px;

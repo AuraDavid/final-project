@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import styles from "./MainPage.module.css";
-import useFetchSectionData from "../../services/NewsService";
+import { formatArticleDate } from "../../helper/DateFormatHelper";
 
 const MainPage = () => {
     const API_KEY = import.meta.env.VITE_NEWS_API_KEY;
@@ -43,7 +43,7 @@ const MainPage = () => {
                                 <article className={styles.firstArticle}>
                                     <h3><Link to={"./Article"} state={{ apiUrl: book.apiUrl }} className={styles.articleTitle}>{book.webTitle}</Link></h3>
                                     <img src={book.fields.thumbnail} alt={book.webTitle} className={styles.articleImg} />
-                                    <p className={styles.articleTime}>{book.webPublicationDate}</p>
+                                    <p className={styles.articleTime}>{formatArticleDate(book.webPublicationDate)}</p>
                                 </article>
                             </section>
                         );
@@ -59,6 +59,7 @@ const MainPage = () => {
                                 <article className={styles.firstArticle}>
                                     <h3><Link to={"./Article"} state={{ apiUrl: sport.apiUrl }} className={styles.articleTitle}>{sport.webTitle}</Link></h3>
                                     <img src={sport.fields.thumbnail} alt={sport.webTitle} className={styles.articleImg} />
+                                    <p className={styles.articleTime}>{formatArticleDate(sport.webPublicationDate)}</p>
                                 </article>
                             </section>
                         );
@@ -74,6 +75,7 @@ const MainPage = () => {
                                 <article className={styles.firstArticle}>
                                     <h3><Link to={"./Article"} state={{ apiUrl: cult.apiUrl }} className={styles.articleTitle}>{cult.webTitle}</Link></h3>
                                     <img src={cult.fields.thumbnail} alt={cult.webTitle} className={styles.articleImg} />
+                                    <p className={styles.articleTime}>{formatArticleDate(cult.webPublicationDate)}</p>
                                 </article>
                             </section>
                         );
@@ -89,6 +91,7 @@ const MainPage = () => {
                                 <article className={styles.firstArticle}>
                                     <h3><Link to={"./Article"} state={{ apiUrl: bus.apiUrl }} className={styles.articleTitle}>{bus.webTitle}</Link></h3>
                                     <img src={bus.fields.thumbnail} alt={bus.webTitle} className={styles.articleImg} />
+                                    <p className={styles.articleTime}>{formatArticleDate(bus.webPublicationDate)}</p>
                                 </article>
                             </section>
                         );
