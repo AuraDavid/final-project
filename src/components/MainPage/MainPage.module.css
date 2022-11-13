@@ -5,7 +5,7 @@
     font-size: 15px;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
     border-radius: 40px;
-    margin-bottom: 40px;
+    margin: 0px 20px 40px 20px;
 }
 
 .section {
@@ -25,9 +25,10 @@
 
 .sectionContainer {
     display: grid;
-    grid-template-columns: 300px 300px 300px;
-    grid-gap: 25px;
-    margin: 0px 25px 25px 25px;
+    grid-template-columns: auto auto auto;
+    grid-gap: 30px;
+    justify-content: center;
+    margin: 0px 30px 30px 30px;
 }
 
 .articleTitle {
@@ -40,6 +41,18 @@
 }
 
 .articleImg {
-    width: 300px;
+    width: 100%;
     border-radius: 40px;
+}
+
+@media only screen and (max-width:1260px) {
+    .sectionContainer {
+        grid-template-columns: auto auto;
+    }
+}
+
+@media only screen and (max-width:992px) {
+    .sectionContainer {
+        grid-template-columns: auto;
+    }
 }
