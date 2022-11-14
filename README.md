@@ -23,5 +23,4 @@ $ npm start
 $ Remember to change your api key
 ```
 
-
 Created for the [Web Development course](https://www.itschool.ro/cursuri/curs-web-development-online) on [ITSchool](https://www.itschool.ro/)

@@ -1,3 +1,8 @@
+.newsTitle {
+  text-align: center;
+  color: #14285f;
+}
+
 .news {
   min-height: 250px;
   display: flex;
