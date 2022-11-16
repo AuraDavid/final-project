@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import styles from "./Section.module.css";
-import useFetchSectionData from "../../services/NewsService";
+import useFetchSectionData from "../../FetchDataHook";
 import { formatArticleDate } from "../../helper/DateFormatHelper";
 
 // Section component used for all the news categories

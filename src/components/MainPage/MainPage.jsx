@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import styles from "./MainPage.module.css";
 import { formatArticleDate } from "../../helper/DateFormatHelper";
+import NewsService from '../../services/NewsService';
 
 const MainPage = () => {
     const API_KEY = import.meta.env.VITE_NEWS_API_KEY;
@@ -11,22 +12,14 @@ const MainPage = () => {
     const [culture, setCulture] = useState([]);
     const [business, setBusiness] = useState([]);
 
-    const sectionsUrl = [
-        `https://content.guardianapis.com/books?api-key=${API_KEY}&show-fields=thumbnail`,
-        `https://content.guardianapis.com/sport?api-key=${API_KEY}&show-fields=thumbnail`,
-        `https://content.guardianapis.com/culture?api-key=${API_KEY}&show-fields=thumbnail`,
-        `https://content.guardianapis.com/business?api-key=${API_KEY}&show-fields=thumbnail`
-    ];
-
     useEffect(() => {
-        Promise.all(
-            sectionsUrl.map(sectionUrl => fetch(sectionUrl).then(response => response.json()))
-        ).then((data) => {
-            setBooks(data[0].response.results.slice(0, 3));
-            setSports(data[1].response.results.slice(0, 3));
-            setCulture(data[2].response.results.slice(0, 3));
-            setBusiness(data[3].response.results.slice(0, 3));
-        })
+        NewsService.getMainPageSections()
+            .then((data) => {
+                setBooks(data[0]);
+                setSports(data[1]);
+                setCulture(data[2]);
+                setBusiness(data[3]);
+            })
             .catch((err) => {
                 console.log(err.message);
             })

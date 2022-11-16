@@ -1,17 +1,16 @@
 import { useEffect, useState } from "react";
-import styles from "./Article.module.css"
-import { useLocation } from 'react-router-dom'
+import styles from "./Article.module.css";
+import { useLocation } from 'react-router-dom';
+import NewsService from "../../services/NewsService";
 
 const Article = (props) => {
     const location = useLocation();
-    const API_KEY = import.meta.env.VITE_NEWS_API_KEY;
     const [article, setArticle] = useState([]);
 
     useEffect(() => {
-        fetch(`${location.state.apiUrl}?api-key=${API_KEY}&show-fields=headline,body`)
-            .then((response) => response.json())
-            .then((data) => {
-                setArticle(data.response.content.fields);
+        NewsService.getArticle(location.state.apiUrl)
+            .then((response) => {
+                setArticle(response);
             })
             .catch((err) => {
                 console.log(err.message);
